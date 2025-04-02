@@ -8,13 +8,15 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyberny-{{ version }}.tar.gz
   sha256: b4bd9d3d2d58261e8f1d91b8204cc563617044d4b9daf6aae8feee31893cb336
+  patches:
+    - gh-40.patch
 
 build:
   entry_points:
     - berny = berny.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -24,7 +26,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - numpy >=1.15.0,<2.0.0
+    - numpy >=1.15.0,<3.0.0
+    - setuptools >=39
 
 test:
   imports:
@@ -32,9 +35,14 @@ test:
   commands:
     - pip check
     - berny --help
+    - pytest tests/ -v
   requires:
     - pip
     - python {{ python_min }}
+    - pytest
+    - mopac
+  source_files:
+    - tests/
 
 about:
   home: https://github.com/jhrmnn/pyberny
