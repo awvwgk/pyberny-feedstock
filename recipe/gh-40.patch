@@ -1,0 +1,14 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 6f7ab1b..365c6a5 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -24,7 +24,8 @@ classifiers = [
+ 
+ [tool.poetry.dependencies]
+ python = "^3.6"
+-numpy = "^1.15"
++setuptools = ">=39"  # for berny.species_data
++numpy = ">=1.15,<3"
+ pytest = { version = "^3.6", optional = true }
+ coverage = { version = "^4.5", optional = true }
+ sphinx = { version = "^2.2", optional = true }
