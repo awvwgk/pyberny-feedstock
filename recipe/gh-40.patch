@@ -12,16 +12,3 @@ index 6f7ab1b..365c6a5 100644
  pytest = { version = "^3.6", optional = true }
  coverage = { version = "^4.5", optional = true }
  sphinx = { version = "^2.2", optional = true }
-diff --git a/tests/test_optimize.py b/tests/test_optimize.py
-index 32a6573..972268e 100644
---- a/tests/test_optimize.py
-+++ b/tests/test_optimize.py
-@@ -15,7 +15,7 @@ def ethanol():
- 
- 
- def aniline():
--    return geomlib.readfile(resource_filename('tests', 'aniline.xyz')), 11
-+    return geomlib.readfile(resource_filename('tests', 'aniline.xyz')), 12
- 
- 
- def cyanogen():
