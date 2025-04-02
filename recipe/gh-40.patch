@@ -1,14 +1,13 @@
-diff --git a/pyproject.toml b/pyproject.toml
-index 6f7ab1b..365c6a5 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -24,7 +24,8 @@ classifiers = [
+diff --git a/setup.py b/setup.py
+index 0ddc45e..5c5cca9 100644
+--- a/setup.py
++++ b/setup.py
+@@ -11,7 +11,7 @@ package_data = \
+ {'': ['*']}
  
- [tool.poetry.dependencies]
- python = "^3.6"
--numpy = "^1.15"
-+setuptools = ">=39"  # for berny.species_data
-+numpy = ">=1.15,<3"
- pytest = { version = "^3.6", optional = true }
- coverage = { version = "^4.5", optional = true }
- sphinx = { version = "^2.2", optional = true }
+ install_requires = \
+-['numpy>=1.15,<2.0']
++['numpy>=1.15,<3.0', 'setuptools>=39']
+ 
+ extras_require = \
+ {'doc': ['sphinx>=2.2,<3.0',
