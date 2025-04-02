@@ -1,3 +1,17 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 1107113..392fbd6 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -24,7 +24,8 @@ classifiers = [
+ 
+ [tool.poetry.dependencies]
+ python = "^3.5"
+-numpy = "^1.15"
++numpy = ">=1.15,<3.0"
++setuptools = ">=39"
+ pytest = { version = "^3.6", optional = true }
+ coverage = { version = "^4.5", optional = true }
+ sphinx = { version = "^2.2", optional = true }
 diff --git a/setup.py b/setup.py
 index 0ddc45e..5c5cca9 100644
 --- a/setup.py
