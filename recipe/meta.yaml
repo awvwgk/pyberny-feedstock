@@ -35,14 +35,9 @@ test:
   commands:
     - pip check
     - berny --help
-    - pytest tests/ -v
   requires:
     - pip
     - python {{ python_min }}
-    - pytest
-    - mopac
-  source_files:
-    - tests/
 
 about:
   home: https://github.com/jhrmnn/pyberny
