@@ -1,5 +1,5 @@
 {% set name = "pyberny" %}
-{% set version = "0.6.3" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,15 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyberny-{{ version }}.tar.gz
-  sha256: b4bd9d3d2d58261e8f1d91b8204cc563617044d4b9daf6aae8feee31893cb336
+  sha256: 54729005140f8b8d98db72d5fa635d994e1cb74666b15c02ff08e5312808abd5
   patches:
-    - gh-40.patch
 
 build:
   entry_points:
     - berny = berny.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
+  number: 0
 
 requirements:
   host:
@@ -26,8 +25,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - numpy >=1.15.0,<3.0.0
-    - setuptools >=39,<81
+    - numpy >=1.21.0,<3.0.0
+    - molsym >=0.2.1
 
 test:
   imports:
